@@ -1,1 +1,7 @@
-@import './reset.scss'
+@import './reset.scss';
+
+.todo-list {
+  li:first-child {
+    padding-top: 8px;
+  }
+}
