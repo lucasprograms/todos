@@ -4,4 +4,22 @@
   li:first-child {
     padding-top: 8px;
   }
+
+  .todo--incomplete {
+    .todo__complete-button:hover:after {
+      content: '\2713';
+    }
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .toggle-detail-icon {
+    transition: transform .25s ease-in-out;
+  }
+
+  .todo-detail-view {
+    transition: max-height .25s ease-in-out;
+  }
 }

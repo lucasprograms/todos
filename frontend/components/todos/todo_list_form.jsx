@@ -34,7 +34,7 @@ export default class TodoListForm extends Component {
 
   render() {
     return (
-      <form className="col-6 ml-1" style={{ backgroundColor: '#008080', padding: '10px' }}>
+      <form className="col-6">
         <div className="form-group">
           <label htmlFor="todo-title-input">Title:</label>
           <input id="todo-title-input" className="form-control" onChange={(e) => { this.updateTitle(e) }} value={this.state.title} />

@@ -1,23 +1,49 @@
-import React from 'react'
+import React, { Component } from 'react'
+import TodoDetailContainer from './todo_detail_container'
 
-const TodoListItem = ({ todo, removeTodo }) => (
-  <li
-    className="col-12 row mb-2 d-block clearfix"
-    style={{ borderBottom: '1px solid black' }}
-  >
-    <span className="col-8 ml-1">{todo.title}</span>
-    <button
-      className="btn btn-outline-dark btn-sm float-right"
-      onClick={() => removeTodo(todo)}
-      style={{
-        fontSize: '12px',
-        fontWeight: 'bold',
-        marginBottom: '8px'
-      }}
-    >
-      &times;
-    </button>
-  </li>
-)
+class TodoListItem extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      detail: false
+    }
+  }
+
+  toggleDetail () {
+    this.setState({
+      detail: !this.state.detail
+    })
+  }
+
+  render () {
+    const todo = this.props.todo
+
+    return (
+      <div
+        className={`card mt-2 mb-2 ${todo.done ? 'todo--done' : 'todo--incomplete'}`}
+        style={{ width: '18rem' }}
+      >
+        <div className="card-body" >
+          <div
+            className="card-title clearfix"
+            style={{ cursor: 'pointer' }}
+            onClick={this.toggleDetail.bind(this)}
+          >
+            <h5
+              className="mr-2 float-left"
+              style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
+            >
+              {todo.title}
+            </h5>
+            <div className={`float-left toggle-detail-icon ${this.state.detail ? 'rotate-180' : ''}`}>{'\u25b2'}</div>
+          </div>
+          <TodoDetailContainer todo={todo} show={this.state.detail}/>
+        </div>
+      </div>
+    )
+  }
+}
+
 
 export default TodoListItem;
