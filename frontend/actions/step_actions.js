@@ -18,7 +18,7 @@ export const removeStep = (step) => ({
   step
 })
 
-export const toggleCompletestep = (step) => ({
+export const toggleCompleteStep = (step) => ({
   type: TOGGLE_COMPLETE_STEP,
   step
 })

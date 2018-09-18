@@ -17,6 +17,24 @@
     }
   }
 
+  .step--incomplete {
+    .step__complete-button:hover:after {
+      content: '\2713';
+      position: absolute;
+      bottom: -4px;
+      right: 0px;
+    }
+  }
+
+  .step--complete {
+    .step__complete-button:after {
+      content: '\2713';
+      position: absolute;
+      bottom: -4px;
+      right: 0px;
+    }
+  }
+
   .rotate-180 {
     transform: rotate(180deg);
   }

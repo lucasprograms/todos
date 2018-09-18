@@ -1,4 +1,5 @@
 import React from 'react'
+import StepListItemContainer from '../step_list/step_list_container'
 
 const TodoDetailView = ({ todo, show, toggleCompleteTodo, removeTodo }) => (
   <div
@@ -10,6 +11,7 @@ const TodoDetailView = ({ todo, show, toggleCompleteTodo, removeTodo }) => (
     }}
   >
     <p className="card-text">{todo.body}</p>
+    <StepListItemContainer todoId={todo.id}/>
     <a
       className="btn btn-outline-info btn-sm mr-3 todo__complete-button"
       onClick={() => toggleCompleteTodo(todo)}
@@ -20,7 +22,6 @@ const TodoDetailView = ({ todo, show, toggleCompleteTodo, removeTodo }) => (
         width: '29px'
       }}
     >
-      {/* { todo.done ? '\u2713' : '' } */}
     </a>
     <a
       className="btn btn-outline-danger btn-sm todo__delete-button"
