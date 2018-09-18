@@ -6,25 +6,29 @@ const initialState = {
     id: 1,
     title: 'wash car',
     body: 'with soap',
-    done: false
+    done: false,
+    index: 0
   },
   2: {
     id: 2,
     title: 'wash dog',
     body: 'with shampoo',
-    done: true
+    done: true,
+    index: 1
   },
   3: {
     id: 3,
     title: 'eat car',
     body: 'with soap',
-    done: false
+    done: false,
+    index: 2
   },
   4: {
     id: 4,
     title: 'drink dog',
     body: 'with shampoo',
-    done: true
+    done: true,
+    index: 3
   },
 };
 
@@ -42,9 +46,8 @@ const todosReducer = (state = initialState, action) => {
         ...state
       })
     case REMOVE_TODO:
-      return Object.keys(state)
-        .filter((key) => key != action.todo.id)
-        .reduce((accum, key) => { accum[key] = state[key]; return accum }, {})
+      const { [`${action.todo.id}`]: _, ...newTodos } = state
+      return newTodos
     case TOGGLE_COMPLETE_TODO:
       let newState = merge({}, state)
       

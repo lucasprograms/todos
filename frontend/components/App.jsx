@@ -1,10 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TodoListContainer from './todos/todo_list_container'
 
-const App = () => {
-  return (
-    <TodoListContainer />
-  )
-}
+const App = () => <TodoListContainer />
 
 export default App

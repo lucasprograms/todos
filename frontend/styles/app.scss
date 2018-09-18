@@ -11,6 +11,12 @@
     }
   }
 
+  .todo--complete {
+    .todo__complete-button:after {
+      content: '\2713';
+    }
+  }
+
   .rotate-180 {
     transform: rotate(180deg);
   }

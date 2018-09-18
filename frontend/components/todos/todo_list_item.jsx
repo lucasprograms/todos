@@ -21,22 +21,22 @@ class TodoListItem extends Component {
 
     return (
       <div
-        className={`card mt-2 mb-2 ${todo.done ? 'todo--done' : 'todo--incomplete'}`}
+        className={`card col-8 mt-2 mb-2 ${todo.done ? 'todo--complete' : 'todo--incomplete'}`}
         style={{ width: '18rem' }}
       >
         <div className="card-body" >
           <div
-            className="card-title clearfix"
+            className="card-titles justify-content-left d-flex"
             style={{ cursor: 'pointer' }}
             onClick={this.toggleDetail.bind(this)}
           >
             <h5
-              className="mr-2 float-left"
+              className="mr-2"
               style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
             >
               {todo.title}
             </h5>
-            <div className={`float-left toggle-detail-icon ${this.state.detail ? 'rotate-180' : ''}`}>{'\u25b2'}</div>
+            <div className={`toggle-detail-icon ${this.state.detail ? 'rotate-180' : ''}`}>{'\u25b2'}</div>
           </div>
           <TodoDetailContainer todo={todo} show={this.state.detail}/>
         </div>

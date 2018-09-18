@@ -20,7 +20,7 @@ const TodoDetailView = ({ todo, show, toggleCompleteTodo, removeTodo }) => (
         width: '29px'
       }}
     >
-      { todo.done ? '\u2713' : '' }
+      {/* { todo.done ? '\u2713' : '' } */}
     </a>
     <a
       className="btn btn-outline-danger btn-sm todo__delete-button"
